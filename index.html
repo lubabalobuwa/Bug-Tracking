@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Tracking App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.13.0/Sortable.min.js"></script>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="display-2"></h1>
+        <div class="row">
+            <div class="col">
+                <h3>Open</h3>
+                <div id="backlog" class="card p-3">
+                    <!-- Backlog column content goes here -->
+                </div>
+            </div>
+            <div class="col">
+                <h3>Resolved</h3>
+                <div id="inProgress" class="card p-3">
+                    <!-- In Progress column content goes here -->
+                </div>
+            </div>
+            <div class="col">
+                <h3>Overdue</h3>
+                <div id="completed" class="card p-3">
+                    <!-- Completed column content goes here -->
+                </div>
+            </div>
+        </div>
+
+        <button id="addButton" class="btn btn-primary mt-3">Add Bug Item</button>
+
+        <!-- Modal -->
+        <div id="bugModal" class="modal">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title">Add Bug Item</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeButton">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                <form id="bugForm">
+                    <div class="form-group">
+                    <label for="titleInput">Title:</label>
+                    <input type="text" class="form-control" id="titleInput" required>
+                    </div>
+                    <div class="form-group">
+                    <label for="descriptionInput">Description:</label>
+                    <textarea class="form-control" id="descriptionInput"></textarea>
+                    </div>
+                    <div class="form-group">
+                    <label for="statusSelect">Status:</label>
+                    <select class="form-control" id="statusSelect">
+                        <option value="open">Open</option>
+                        <option value="resolved">Resolved</option>
+                        <option value="overdue">Overdue</option>
+                    </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

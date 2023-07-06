@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bug Tracking App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+        <div class="col">
+            <h2>Backlog Issues</h2>
+            <div id="backlog" class="column"></div>
+        </div>
+        <div class="col">
+            <h2>In Progress</h2>
+            <div id="inProgress" class="column"></div>
+        </div>
+        <div class="col">
+            <h2>Completed</h2>
+            <div id="completed" class="column"></div>
+        </div>
+        </div>
+    </div>
+
+    <button id="addButton" class="btn btn-primary mt-3">Add Bug Item</button>
+
+    <!-- Modal -->
+    <div id="bugModal" class="modal">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title">Add Bug Item</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            <form id="bugForm">
+                <div class="form-group">
+                <label for="titleInput">Title:</label>
+                <input type="text" class="form-control" id="titleInput" required>
+                </div>
+                <div class="form-group">
+                <label for="descriptionInput">Description:</label>
+                <textarea class="form-control" id="descriptionInput" required></textarea>
+                </div>
+                <div class="form-group">
+                <label for="statusSelect">Status:</label>
+                <select class="form-control" id="statusSelect">
+                    <option value="backlog">Backlog</option>
+                    <option value="inprogress">In Progress</option>
+                    <option value="completed">Completed</option>
+                </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sortable/1.13.0/Sortable.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
